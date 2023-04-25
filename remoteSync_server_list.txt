@@ -1,0 +1,10 @@
+# 使用 “,” 分隔
+# ${SERVER_NAME} ${SERVER_TYPE} ${SERVER_LINK} ${DST_FOLDER} ${EXCLUDE} ${EXTRA}
+# 服务器名称， 服务器类型 , 服务器链接 , 本地存储  , 附加参数（排除-exclude） ,  附加参数（lftp set）
+# 同步类型，rsync, lftp, wget(暂未测试)
+# set net:limit-rate 20480000:409600,lftp限速下载20m，上传4m
+#
+openEuler-22.03-LTS-SP1,rsync,mirrors.tuna.tsinghua.edu.cn/openeuler/openEuler-22.03-LTS-SP1,/data/disk-sde1-1t/mirrors/openeuler/openEuler-22.03-LTS-SP1,--exclude-from=/root/shell-script/remoteSync_exclude_openeuler.list
+centos7-epel,rsync,mirrors.tuna.tsinghua.edu.cn/epel,/data/disk-sde1-1t/mirrors/epel,--exclude-from=/root/shell-script/remoteSync_exclude_centos-epel.list
+#centos-stream,rsync,mirrors.tuna.tsinghua.edu.cn/centos-stream,/data/disk-sde1-1t/mirrors/centos-stream,--exclude-from=/root/shell-script/remoteSync_exclude_centos-centos-stream.list
+192.168.8.100,ftp,192.168.8.100,/data/disk-sdd1-2t/192.168.8.100
